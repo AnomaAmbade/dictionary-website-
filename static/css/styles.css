@@ -1,0 +1,192 @@
+/* brandname navbar section*/
+.navbar {
+  margin-bottom: 0;
+  padding: 20px 0;
+  background-color: #212529;
+  z-index: 9999;
+  border: 0;
+  font-size: 12px !important;
+  line-height: 1.42857143 !important;
+  letter-spacing: 4px;
+  border-radius: 0;
+}
+
+.navbar li a,
+.navbar .navbar-brand {
+  color: #fff !important;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+
+/* header section*/
+header.masthead {
+  margin-bottom: 50px;
+  background: no-repeat center center;
+  background-color: #868e96;
+  background-attachment: scroll;
+  position: relative;
+  background-size: cover;
+}
+
+header.masthead .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #6C757D;
+  opacity: 0.3;
+}
+
+header.masthead .site-heading {
+  padding: 80px 0 210px;
+  color: #fff;
+  text-align: center;
+  z-index: 9999;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .site-heading {
+    padding: 100px 0 300px;
+  }
+}
+
+header.masthead .site-heading h1 {
+  font-size: 50px;
+  margin-top: 0;
+}
+
+header.masthead .site-heading .subheading {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.1;
+  display: block;
+  margin: 10px 0 0;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media only screen and (min-width: 768px) {
+  header.masthead .site-heading h1 {
+    font-size: 80px;
+  }
+}
+
+
+/* search bar section*/
+.justify-content-sm-center {
+  justify-content: center !important;
+}
+
+.gap-2 {
+  gap: 1rem !important;
+}
+
+.text-center {
+  margin: 100px auto;
+}
+
+input.search-word {
+  margin-left: 500px;
+  margin-right: 10px;
+  padding: auto;
+  width: 400px;
+  height: 100%;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  input.search-word {
+    margin-left: 130px;
+  }
+}
+
+.btn .search-btn {
+  color: #212529;
+}
+
+.bi {
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+
+/* body section*/
+body {
+  font-size: 20px;
+  color: #212529;
+  font-family: 'Lora', 'Times New Roman', serif;
+}
+
+p {
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+h2 {
+  font-size: 40px;
+  display: inline-block;
+  margin-right: 40px;
+}
+
+.pronounciation {
+  display: inline-block;
+}
+
+p.word-type,
+p.example {
+  color: #868e96;
+}
+
+p.pronounciation,
+p.definition,
+p.example {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+div.container {
+  margin: 0 100px;
+}
+
+div.def-container {
+  margin: 0 50px;
+}
+
+/* no defintion */
+.no-def {
+  margin: 50px 0 100px;
+  color: #d02f31;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+
+/* definition separator */
+hr {
+  border: dotted #212529 6px;
+  border-bottom: none;
+  width: 4%;
+  margin: 50px auto;
+}
+
+
+/* footer note */
+footer.footer-center {
+  justify-content: center !important;
+  text-align: center;
+  background-color: #212529;
+  color: #fff !important;
+  padding: 40px 0 30px
+}
+
+
+
+/* 
+#8E9686
+#868E96
+#968E86
+#6C757D
+#968696
+#d02f31
+*/

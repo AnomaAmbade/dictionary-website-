@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/styles.css">
+  <title>Voctionary</title>
+</head>
+
+<body>
+
+  <!-- Brandname on navbar -->
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{ url_for('home') }}">VOCTIONARY</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero section -->
+  <header class="masthead" style="background-image: url('../static/assets/images/books3.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Search for any word.</h1>
+            <span class="subheading">Find the correct definition of the word along with an example for how to use
+              it.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CTA -->
+  <div class="px-4 py-5 my-5 text-center">
+    <div class="d-grid gap-2 d-sm-flex justify-content-lg-center">
+      <form action="{{ url_for('home') }}" method="post">
+        <input type="text" name="word" class="search-word" placeholder="Search">
+        <button class="btn btn-primary seacrh-btn" type="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+          </svg>
+        </button>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Result section -->
+  <div class="container">
+    {% if response == [{'message': 'No definition :('}] %}
+    <p class="no-def">Could not find definition for the word.</p>
+    {% else %}
+    <h2>{{ response.word }}</h2>
+    <p class="pronounciation"><em>{{ response.pronunciation | safe }}</em></p>
+    {% for def in response.definitions: %}
+    <p class="word-type"><strong>{{ def['type'] }}</strong></p>
+    <div class="def-container">
+      <p class="definition">{{ def['definition'] }}</p>
+      {% if def['example'] != None: %}
+      <p class="example">{{ '\"' + def['example'].capitalize() | safe | striptags + '\"' }}</p>
+      {% endif %}
+    </div>
+    <hr>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  <!-- Footer -->
+  <footer class="container-fluid footer-center">
+    <a href="{{ url_for('home') }}}" title="To Top">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </a>
+    <p>Made With ❤️ By Anoma.</p>
+  </footer>
+
+
+</body>
+
+</html>
